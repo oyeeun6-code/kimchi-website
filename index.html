@@ -14,59 +14,25 @@
     *{ box-sizing:border-box; }
     body{
       font-family:-apple-system, system-ui, sans-serif;
-      line-height:1.6;
-      margin:0;
-      color:#333;
-      background:#fdfdfd;
+      line-height:1.6; margin:0; color:#333; background:#fdfdfd;
     }
-
     nav{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:var(--dark);
-      padding:12px 14px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
+      position:sticky; top:0; z-index:1000; background:var(--dark);
+      padding:12px 14px; display:flex; gap:10px;
+      align-items:center; justify-content:center; flex-wrap:wrap;
     }
     .navBtn{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.18);
-      color:#fff;
-      cursor:pointer;
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:0.92rem;
-      display:flex;
-      align-items:center;
-      gap:8px;
+      background:transparent; border:1px solid rgba(255,255,255,0.18);
+      color:#fff; cursor:pointer; padding:8px 12px; border-radius:999px;
+      font-weight:700; font-size:0.92rem; display:flex; align-items:center; gap:8px;
     }
     .navBtn:hover{ border-color:rgba(255,255,255,0.35); }
     .navBtn.active{ background:rgba(255,255,255,0.14); }
-
-    .navRight{
-      margin-left:auto;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
+    .navRight{ margin-left:auto; display:flex; gap:10px; align-items:center; }
     .musicBtn{
-      background:var(--red);
-      border:0;
-      color:#fff;
-      cursor:pointer;
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:0.9rem;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      white-space:nowrap;
+      background:var(--red); border:0; color:#fff; cursor:pointer;
+      padding:8px 12px; border-radius:999px; font-weight:800; font-size:0.9rem;
+      display:flex; align-items:center; gap:8px; white-space:nowrap;
     }
     .musicBtn:hover{ filter:brightness(0.95); }
 
@@ -78,141 +44,109 @@
       to{ opacity:1; transform:translateY(0); }
     }
 
-    h2{
-      color:var(--red);
-      border-left:5px solid var(--red);
-      padding-left:10px;
-      margin-top:0;
-    }
+    h2{ color:var(--red); border-left:5px solid var(--red); padding-left:10px; margin-top:0; }
+    h3{ color:var(--dark); margin-top:28px; }
 
     .multimedia-box{
-      background:var(--card);
-      padding:22px;
-      border-radius:12px;
-      margin:18px 0;
-      text-align:center;
-      border:1px solid var(--border);
+      background:var(--card); padding:22px; border-radius:12px;
+      margin:18px 0; text-align:center; border:1px solid var(--border);
     }
+
+    /* 사진 그리드 */
+    .photo-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap:16px; margin:18px 0;
+    }
+    .photo-card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:12px; overflow:hidden; text-align:center; padding-bottom:12px;
+    }
+    .photo-card img{
+      width:100%; height:180px; object-fit:cover;
+      border-radius:0; box-shadow:none; display:block;
+    }
+    .photo-card p{ margin:8px 8px 0; font-size:0.85rem; font-weight:700; color:var(--dark); }
+
+    /* 김치 만드는 법: 단계별 레이아웃 */
+    .step{
+      display:flex; flex-direction:column;
+      gap:14px; margin-bottom:32px;
+      background:var(--card); border:1px solid var(--border);
+      border-radius:16px; overflow:hidden;
+    }
+    .step-header{
+      background:var(--red); color:#fff;
+      padding:14px 20px; display:flex; align-items:center; gap:12px;
+    }
+    .step-number{
+      background:#fff; color:var(--red);
+      border-radius:50%; width:34px; height:34px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; font-size:1rem; flex-shrink:0;
+    }
+    .step-title{ font-weight:800; font-size:1.05rem; }
+    .step-body{ padding:0 20px 20px; }
+    .step-body p{ margin:10px 0 14px; }
+    .step-body img{
+      width:100%; max-width:500px; height:260px;
+      object-fit:cover; border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.13);
+      display:block; margin:0 auto;
+    }
+
     img{
-      width:100%;
-      max-width:560px;
-      height:auto;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.12);
+      width:100%; max-width:560px; height:auto;
+      border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.12);
     }
     iframe{
-      width:100%;
-      max-width:560px;
-      aspect-ratio:16/9;
-      border:0;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.12);
+      width:100%; max-width:560px; aspect-ratio:16/9;
+      border:0; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.12);
     }
 
     .hero{
-      min-height:calc(100vh - 62px);
-      border-radius:18px;
-      overflow:hidden;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:34px 18px;
-      margin:18px;
+      min-height:calc(100vh - 62px); border-radius:18px; overflow:hidden;
+      position:relative; display:flex; align-items:center; justify-content:center;
+      padding:34px 18px; margin:18px;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.30), rgba(0,0,0,0.65)),
         url("https://images.unsplash.com/photo-1680786226280-3e00ce14f295?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85")
         center/cover no-repeat;
       box-shadow:0 10px 26px rgba(0,0,0,0.18);
     }
-    .heroInner{
-      width:min(900px, 100%);
-      text-align:center;
-      color:#fff;
-    }
+    .heroInner{ width:min(900px,100%); text-align:center; color:#fff; }
     .heroTitle{
-      margin:0;
-      font-weight:900;
-      letter-spacing:0.4px;
-      line-height:1.1;
-      font-size:clamp(2rem, 4vw, 3.2rem);
-      text-shadow:0 6px 18px rgba(0,0,0,0.35);
+      margin:0; font-weight:900; letter-spacing:0.4px; line-height:1.1;
+      font-size:clamp(2rem,4vw,3.2rem); text-shadow:0 6px 18px rgba(0,0,0,0.35);
     }
-    .heroSub{
-      margin:14px auto 0;
-      max-width:720px;
-      color:rgba(255,255,255,0.92);
-      font-size:1.02rem;
-    }
-    .heroCtas{
-      margin-top:22px;
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .cta{
-      background:var(--red);
-      color:#fff;
-      border:0;
-      padding:10px 16px;
-      border-radius:12px;
-      font-weight:900;
-      cursor:pointer;
-    }
-    .cta.secondary{
-      background:rgba(255,255,255,0.14);
-      border:1px solid rgba(255,255,255,0.22);
-    }
+    .heroSub{ margin:14px auto 0; max-width:720px; color:rgba(255,255,255,0.92); font-size:1.02rem; }
+    .heroCtas{ margin-top:22px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+    .cta{ background:var(--red); color:#fff; border:0; padding:10px 16px; border-radius:12px; font-weight:900; cursor:pointer; }
+    .cta.secondary{ background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.22); }
 
-    footer{
-      text-align:center;
-      padding:26px 16px;
-      background:#333;
-      color:#fff;
-      font-size:0.85rem;
-      margin-top:30px;
-    }
+    footer{ text-align:center; padding:26px 16px; background:#333; color:#fff; font-size:0.85rem; margin-top:30px; }
 
     .overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:2000;
+      position:fixed; inset:0; background:rgba(0,0,0,0.55);
+      display:none; align-items:center; justify-content:center; padding:18px; z-index:2000;
     }
     .overlay.show{ display:flex; }
     .overlayCard{
-      width:min(520px, 100%);
-      background:#fff;
-      border-radius:16px;
-      padding:18px 16px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,0.28);
+      width:min(520px,100%); background:#fff; border-radius:16px;
+      padding:18px 16px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.28);
     }
     .overlayCard h3{ margin:8px 0 6px; }
     .overlayCard p{ margin:0 0 12px; color:#555; }
     .overlayCard button{
-      background:var(--red);
-      color:#fff;
-      border:0;
-      padding:10px 16px;
-      border-radius:12px;
-      font-weight:900;
-      cursor:pointer;
+      background:var(--red); color:#fff; border:0;
+      padding:10px 16px; border-radius:12px; font-weight:900; cursor:pointer;
     }
   </style>
 </head>
-
 <body>
-  <!-- Background music -->
+
   <audio id="bgm" preload="auto" loop>
-    <!-- 1) 추천: GitHub Pages에 bgm.mp3 올리면 이게 우선 재생 -->
     <source src="bgm.mp3" type="audio/mpeg" />
-    <!-- 2) CodePen용 fallback(업로드 없이 재생되는 온라인 mp3) -->
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />
   </audio>
 
@@ -230,19 +164,20 @@
     <button class="navBtn" data-page="history">📚 History & Types</button>
     <button class="navBtn" data-page="health">🧬 Health Benefits</button>
     <button class="navBtn" data-page="howto">🧑‍🍳 How to Make Kimchi</button>
-
     <div class="navRight">
       <button class="musicBtn" id="musicToggle" type="button">🔊 Music: On</button>
     </div>
   </nav>
 
   <main>
+
+    <!-- HOME -->
     <section class="page" id="home">
       <div class="hero" role="img" aria-label="Kimchi background image">
         <div class="heroInner">
           <h1 class="heroTitle">Kimchi: The Soul of Korea</h1>
           <p class="heroSub">
-            Explore what kimchi is, how it evolved, why it’s loved worldwide, and how to make a simple version at home.
+            Explore what kimchi is, how it evolved, why it's loved worldwide, and how to make a simple version at home.
           </p>
           <div class="heroCtas">
             <button class="cta" type="button" onclick="showPageById('intro')">Start ▶</button>
@@ -252,10 +187,11 @@
       </div>
     </section>
 
+    <!-- INTRODUCTION -->
     <section class="page" id="intro">
       <h2>Introduction</h2>
       <p>
-        Baechu kimchi, made with napa cabbage, is one of Korea’s most iconic fermented foods.
+        Baechu kimchi, made with napa cabbage, is one of Korea's most iconic fermented foods.
         Seasoning is carefully spread between the leaves, and the flavor becomes deeper and tangier as it ferments.
       </p>
       <p>
@@ -270,6 +206,7 @@
       </div>
     </section>
 
+    <!-- HISTORY & TYPES -->
     <section class="page" id="history">
       <h2>History & Types</h2>
       <p>
@@ -286,8 +223,34 @@
           alt="Variety of kimchi dishes"
         />
       </div>
+
+      <h3>Different Types of Kimchi</h3>
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Korean-Dongchimi-01.jpg/640px-Korean-Dongchimi-01.jpg"
+            alt="Dongchimi – Korean water radish kimchi"
+          />
+          <p>🥣 Dongchimi<br><span style="font-weight:400;font-size:0.78rem;">Mild watery radish kimchi</span></p>
+        </div>
+        <div class="photo-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/KOCIS_Dongchimi_%284814810950%29.jpg/640px-KOCIS_Dongchimi_%284814810950%29.jpg"
+            alt="Dongchimi served in a bowl"
+          />
+          <p>🥣 Dongchimi<br><span style="font-weight:400;font-size:0.78rem;">Traditional winter kimchi</span></p>
+        </div>
+        <div class="photo-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Korean_cuisine-Pa_kimchi-01.jpg/640px-Korean_cuisine-Pa_kimchi-01.jpg"
+            alt="Pa-kimchi – Korean green onion kimchi"
+          />
+          <p>🌿 Pa-kimchi<br><span style="font-weight:400;font-size:0.78rem;">Spicy green onion kimchi</span></p>
+        </div>
+      </div>
     </section>
 
+    <!-- HEALTH BENEFITS -->
     <section class="page" id="health">
       <h2>Health Benefits</h2>
       <p>
@@ -297,7 +260,6 @@
       <p>
         Many people enjoy kimchi as a flavorful side dish that can fit into a balanced diet.
       </p>
-
       <div class="multimedia-box">
         <iframe
           src="https://www.youtube.com/embed/jh6Q-tAo0Os?si=NxHv1gDCGt_q6DK8"
@@ -309,29 +271,91 @@
       </div>
     </section>
 
+    <!-- HOW TO MAKE KIMCHI -->
     <section class="page" id="howto">
       <h2>How to Make Kimchi (Simple Guide)</h2>
-      <p>
-        This is a simplified overview of how many people make baechu kimchi at home.
-        Recipes vary a lot, so think of this as a basic, beginner-friendly flow.
-      </p>
+      <p>Follow these five steps to make a basic baechu kimchi at home.</p>
 
-      <div class="multimedia-box" style="text-align:left;">
-        <ol style="margin:0; padding-left:18px;">
-          <li>Salt the napa cabbage: cut and salt it, then rest until leaves soften.</li>
-          <li>Rinse and drain: rinse off excess salt and let it drain well.</li>
-          <li>Make seasoning paste: mix garlic, ginger, chili flakes, and optional fish sauce/salted seafood.</li>
-          <li>Season the cabbage: spread paste between leaves (wear gloves).</li>
-          <li>Pack and ferment: put into a container, leave at room temperature briefly, then refrigerate.</li>
-        </ol>
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <div class="step-title">Salt the Napa Cabbage</div>
+        </div>
+        <div class="step-body">
+          <p>Cut the napa cabbage into quarters and rub salt generously between the leaves. Let it rest for 1–2 hours until the leaves soften and release water.</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Making_kimchi.jpg/640px-Making_kimchi.jpg"
+            alt="Salting napa cabbage for kimchi"
+            onerror="this.src='https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80'"
+          />
+        </div>
       </div>
 
-      <div class="multimedia-box">
-        <img
-          src="https://images.unsplash.com/photo-1700381476848-721c2b6a3a2c?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85"
-          alt="Kimchi ingredients and preparation"
-        />
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <div class="step-title">Rinse and Drain</div>
+        </div>
+        <div class="step-body">
+          <p>Rinse the salted cabbage under cold running water two or three times to remove the excess salt. Squeeze gently and let it drain in a colander for about 30 minutes.</p>
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=600"
+            alt="Rinsing and draining cabbage"
+            onerror="this.src='https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?w=600&q=80'"
+          />
+        </div>
       </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <div class="step-title">Make the Seasoning Paste</div>
+        </div>
+        <div class="step-body">
+          <p>Mix gochugaru (Korean chili flakes), minced garlic, grated ginger, and fish sauce (or salted shrimp) together in a bowl until you have a thick, fragrant red paste.</p>
+          <img
+            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=600"
+            alt="Kimchi seasoning paste with gochugaru"
+            onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&q=80'"
+          />
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-number">4</div>
+          <div class="step-title">Season the Cabbage</div>
+        </div>
+        <div class="step-body">
+          <p>Put on gloves and spread the paste evenly between every leaf of the cabbage. Make sure each layer is fully coated so the flavor develops evenly during fermentation.</p>
+          <img
+            src="https://images.unsplash.com/photo-1585032226651-759b368d7246?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=600"
+            alt="Spreading kimchi paste on cabbage leaves"
+            onerror="this.src='https://images.unsplash.com/photo-1515942140272-7bfd501b4fc9?w=600&q=80'"
+          />
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-number">5</div>
+          <div class="step-title">Pack and Ferment</div>
+        </div>
+        <div class="step-body">
+          <p>Pack the seasoned cabbage tightly into a clean jar or airtight container. Leave it at room temperature for 1–2 days to start fermentation, then move it to the refrigerator to slow the process and develop flavor over time.</p>
+          <img
+            src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=600"
+            alt="Kimchi packed in jars for fermentation"
+            onerror="this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80'"
+          />
+        </div>
+      </div>
+
     </section>
   </main>
 
@@ -340,91 +364,72 @@
   </footer>
 
   <script>
-    const pageOrder = ["home", "intro", "history", "health", "howto"];
+    const pageOrder = ["home","intro","history","health","howto"];
     const pages = Array.from(document.querySelectorAll(".page"));
     const navBtns = Array.from(document.querySelectorAll(".navBtn"));
-
     const bgm = document.getElementById("bgm");
     const musicToggle = document.getElementById("musicToggle");
     const overlay = document.getElementById("unlockOverlay");
     const unlockBtn = document.getElementById("unlockBtn");
-
     let musicOn = true;
 
     function setActiveNav(id){
       navBtns.forEach(b => b.classList.toggle("active", b.dataset.page === id));
     }
-
     function showPageById(id, pushHash = true){
       pages.forEach(p => p.classList.toggle("active", p.id === id));
       setActiveNav(id);
       if (pushHash) history.replaceState(null, "", "#" + id);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top:0, behavior:"smooth" });
     }
-
     async function tryPlayMusic(){
       if (!musicOn) return;
-
       try{
         bgm.muted = false;
         await bgm.play();
         overlay.classList.remove("show");
-        overlay.setAttribute("aria-hidden", "true");
+        overlay.setAttribute("aria-hidden","true");
         musicToggle.textContent = "🔊 Music: On";
       }catch(e){
-        // Autoplay can be blocked until user interacts [web:77][web:87]
         overlay.classList.add("show");
-        overlay.setAttribute("aria-hidden", "false");
+        overlay.setAttribute("aria-hidden","false");
         musicToggle.textContent = "🔇 Music: Off";
       }
     }
-
     async function unlockMusic(){
       try{
-        musicOn = true;
-        bgm.muted = false;
+        musicOn = true; bgm.muted = false;
         await bgm.play();
         overlay.classList.remove("show");
-        overlay.setAttribute("aria-hidden", "true");
+        overlay.setAttribute("aria-hidden","true");
         musicToggle.textContent = "🔊 Music: On";
-      }catch(e){
-        // keep overlay
-      }
+      }catch(e){}
     }
-
     musicToggle.addEventListener("click", async () => {
-      if (musicOn){
-        musicOn = false;
-        bgm.pause();
+      if(musicOn){
+        musicOn = false; bgm.pause();
         musicToggle.textContent = "🔇 Music: Off";
         overlay.classList.remove("show");
-        overlay.setAttribute("aria-hidden", "true");
+        overlay.setAttribute("aria-hidden","true");
       }else{
-        musicOn = true;
-        await tryPlayMusic();
+        musicOn = true; await tryPlayMusic();
       }
     });
-
     unlockBtn.addEventListener("click", unlockMusic);
-
     navBtns.forEach(btn => {
       btn.addEventListener("click", () => showPageById(btn.dataset.page));
     });
-
-    const initial = (location.hash || "#home").replace("#", "");
+    const initial = (location.hash || "#home").replace("#","");
     showPageById(pageOrder.includes(initial) ? initial : "home", false);
-
     document.addEventListener("DOMContentLoaded", tryPlayMusic);
-
-    const firstGesture = async () => {
-      if (musicOn) await tryPlayMusic();
-      window.removeEventListener("click", firstGesture);
-      window.removeEventListener("touchstart", firstGesture);
-      window.removeEventListener("keydown", firstGesture);
-    };
-    window.addEventListener("click", firstGesture, { once: true });
-    window.addEventListener("touchstart", firstGesture, { once: true });
-    window.addEventListener("keydown", firstGesture, { once: true });
+    window.addEventListener("click", async function f(){
+      if(musicOn) await tryPlayMusic();
+      window.removeEventListener("click", f);
+    }, { once:true });
+    window.addEventListener("touchstart", async function f(){
+      if(musicOn) await tryPlayMusic();
+      window.removeEventListener("touchstart", f);
+    }, { once:true });
   </script>
 </body>
 </html>
